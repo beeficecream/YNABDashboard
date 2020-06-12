@@ -20,5 +20,3 @@ Links to each image used to create this stack...
 * [InfluxDB](https://hub.docker.com/_/influxdb)
 
 * [Chronograf](https://hub.docker.com/_/chronograf)
-
-Test
