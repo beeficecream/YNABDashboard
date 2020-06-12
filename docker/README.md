@@ -1,4 +1,4 @@
-# YNABDashboard.Grafana
+# YNABDashboard.Docker
 
 A Docker compose file that will build default deployments of the following services:
 
