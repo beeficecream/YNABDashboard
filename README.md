@@ -17,3 +17,13 @@ This project leverages the following different pieces of technology to achieve t
 
 * Docker 19.03
   * Containerization software used to host both InfluxDB and Grafana
+
+## Deployment
+
+The order in which each module of this solution needs deployed is listed chronologically below.  Detailed instructions for deploying each module can be found in README files within provided directories.
+
+1. Docker - There need to be services to communicate with moving forward
+
+2. Python - Data is going to be required to visualize anything
+
+3. Grafana - Your infrastructure and data collection are in place, time to setup the dashboard
