@@ -11,7 +11,7 @@ A Docker compose file that will build default deployments of the following servi
 
 ## Setup
 
-Customization, configuration, and/or deployment processes are out-of-scope for this project. Considering there are numerous different ways to deploy a container and/or stack, this is being left to the discretion of the user.
+Customization, configuration, and/or deployment processes for Docker are out-of-scope for this project. Considering there are numerous different ways to deploy a container and/or stack, this is being left to the discretion of the user.
 
 Links to each image used to create this stack...
 
