@@ -19,3 +19,27 @@ This is a template of a working config file for the python script. Rename this t
 ### requirements.txt
 
 Dependencies for the script and wrappers
+
+## Setup
+
+### Configurations
+
+* InfluxDBHost - Hostname or IP address of InfluxDB host
+
+* InfluxDBPort - Listening port for InfluxDB service
+
+* InfluxDBIndex - Name of InfluxDB index holding YNAB data
+
+* InfluxDBUser - InfluxDB user with access to YNAB index listed in 'InfluxDBIndex' configuration
+
+* InfluxDBPass - Password for InfluxDB user listed in 'Infl
+
+* YNAB_API_Key - API Key assigned to your YNAB account
+
+* YNAB_Budget_ID - ID of YNAB budget to pull data from
+
+### Execution and Scheduling
+
+Currently, the script is purpose-built to run on an hourly basis. This can be achieved by using **cron** on linux hosts or the **Task Scheduler** on Windows hosts.
+
+Note: Running this on a Windows host requires that you install and configure Python 3.8 prior to execution.

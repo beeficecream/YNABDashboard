@@ -1,6 +1,6 @@
 # YNABDashboard.Grafana
 
-Included is a Docker compose file that will build default deployments of both InfluxDB and Grafana.
+A Docker compose file that will build default deployments of both InfluxDB and Grafana.
 
 ## Setup
 
