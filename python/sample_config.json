@@ -1,0 +1,10 @@
+{
+    "execution_window_days": 7,
+    "idb_host": "hostname_or_ip_of_influxdb_host",
+    "idb_port": 8086,
+    "idb_index": "script-ynab",
+    "idb_user": "influxdb_username",
+    "idb_pass": "influxdb_password",
+    "ynab_api_key": "ynab_api_key",
+    "ynab_budget_id": "ynab_budget_id"
+}
