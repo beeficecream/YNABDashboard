@@ -2,6 +2,7 @@
 import influxdb
 import json
 import logging
+import os
 import requests
 import sys
 import time
@@ -12,20 +13,24 @@ import ynab_resources
 from datetime import datetime,timedelta
 
 # Configurations
-execution_datetime          = datetime.now().replace(minute=0,second=0,microsecond=0)
-execution_window_days       = 7
-idb_host                    = "influxdb_ip_address"
-idb_port                    = 8086
-idb_index                   = "name_of_influxdb_index"
-idb_user                    = "influxdb_username"
-idb_pass                    = "influxdb_password"
-ynab_api_key                = "ynab_api_key"
-ynab_budget_id              = "ynab_budget_id"
+config = "config.json"
+execution_datetime  = datetime.now().replace(minute=0,second=0,microsecond=0)
 
 # Execution
 ## Setup logging
 logging.basicConfig(level=logging.INFO,stream=sys.stdout, format="[%(asctime)s] %(levelname)s :: %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 logger = logging.getLogger()
+
+# Import and set all needed configurations
+with open(os.path.join(sys.path[0],config)) as json_file:
+    config_data = json.load(file)
+idb_host = config_data["InfluxDBHost"]
+idb_port = config_data["InfluxDBPort"]
+idb_index = config_data["InfluxDBIndex"]
+idb_user = config_data["InfluxDBUser"]
+idb_pass = config_data["InfluxDBPass"]
+ynab_api_key = config_data["YNAB_API_Key"]
+ynab_budget_id = config_data["YNAB_Budget_ID"]
 
 # Initiate connection to InfluxDB
 influx_client = influxdb.InfluxDBClient(idb_host,idb_port,idb_user,idb_pass)
