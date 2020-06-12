@@ -23,7 +23,7 @@ This bar gauge is configured to track the "goalPercentageComplete" value for any
 
 Review each of the queries listed, replacing the placeholder Category names with the names of any Categories currently configured with a Goal.
 
-There are four savings sources provided by default, more can be added by duplicating one of the provided queries and modifying the new queries targeted Category.
+There are four savings sources provided by default, more can be added by duplicating one of the provided queries and modifying the new query's targeted Category.
 
 #### Income
 
@@ -31,4 +31,4 @@ This pie chart is configured to measure the sum of all transactions from target 
 
 Review all queries listed, replacing the placeholder Payee names with the names of the your income Payees.
 
-There are two income sources provided by default, more can be added by duplicating one of the provided queries.
+There are two income sources provided by default, more can be added by duplicating one of the provided queries and modifying the new query's targeted Payee.
