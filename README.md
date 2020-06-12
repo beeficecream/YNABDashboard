@@ -1,7 +1,7 @@
 # YNABDashboard
 Everything required to get started on dashboarding your YNAB budget data!
 
-[Dashboard Example](https://i.redd.it/pedwe755gd451.png)
+![Dashboard Example](https://i.redd.it/pedwe755gd451.png)
 
 This project leverages the following different pieces of technology to achieve the end product:
 * Python 3.8
