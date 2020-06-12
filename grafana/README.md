@@ -12,3 +12,23 @@ This is the full JSON for the Financial Health dashboard in Grafana.
 4. Name the dashboard whatever you wish, save the dashboard in whichever folder you wish.  Make sure the UID does not match any of your existing dashboards (change if necessary) and click **Import**.
 
 ### Configuration
+
+Once imported there are two visualizations you must reconfigure to match your specific use case.
+
+Accessing the settings for a visualization can be achieved by click the title of the visualization, then **Edit**.
+
+#### Savings Objectives
+
+This bar gauge is configured to track the "goalPercentageComplete" value for any Category you specify.  The value stored for "goalPercentageComplete" is an aggregate value available through the YNAB API and pulled over hourly by the Python script.  
+
+Review each of the queries listed, replacing the placeholder Category names with the names of any Categories currently configured with a Goal.
+
+There are four savings sources provided by default, more can be added by duplicating one of the provided queries and modifying the new queries targeted Category.
+
+#### Income
+
+This pie chart is configured to measure the sum of all transactions from target Payees within the interval currently selected for operation.  The interval can be changed by using the dropdown menu near the top right of the visualization preview pane.
+
+Review all queries listed, replacing the placeholder Payee names with the names of the your income Payees.
+
+There are two income sources provided by default, more can be added by duplicating one of the provided queries.
