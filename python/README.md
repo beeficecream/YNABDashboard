@@ -42,4 +42,4 @@ Dependencies for the script and wrappers
 
 Currently, the script is purpose-built to run on an hourly basis. This can be achieved by using **cron** on linux hosts or the **Task Scheduler** on Windows hosts.
 
-Note: Running this on a Windows host requires that you install and configure Python 3.8 prior to execution.
+Note: Running this on a Windows host requires installation and configuration of Python 3.8 prior to execution.

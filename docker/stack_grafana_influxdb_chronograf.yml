@@ -1,0 +1,30 @@
+version: "2.4"
+services:
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - '/path/to/local/storage/for/grafana:/var/lib/grafana'
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    restart: always
+    ports:
+      - "8086:8086"
+    environment:
+      - INFLUXDB_GRAPHITE_ENABLED=true
+      - INFLUXDB_ADMIN_USER=influx_admin
+      - INFLUXDB_ADMIN_PASSWORD=influx_admin_password
+    volumes:
+      - "/path/to/local/storage/for/influxdb:/var/lib/influxdb"
+  chronograf:
+    image: chronograf:latest
+    container_name: chronograf
+    restart: always
+    ports:
+      - "8888:8888"
+    volumes:
+      - '/path/to/local/storage/for/chronograf:/var/lib/chronograf'

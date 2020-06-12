@@ -1,17 +1,22 @@
 # YNABDashboard.Grafana
 
-A Docker compose file that will build default deployments of both InfluxDB and Grafana.
+A Docker compose file that will build default deployments of the following services:
+
+* InfluxDB - Time series database used to store YNAB data
+
+* Grafana - Analytics and visualizations application
+
+* Chronograf - Lightweight "admin" portal to InfluxDB
+  * This is optional; removing this from the Docker compose file will not hinder functionality of the solution
 
 ## Setup
 
-### Configuration
+Customization, configuration, and/or deployment processes are out-of-scope for this project. Considering there are numerous different ways to deploy a container and/or stack, this is being left to the discretion of the user.
 
-Include any steps necessary to configure the Docker compose file prior to deployment.  This would be necessary for anyone that wants to modify storage, port, environmental, or some other specific setting.
+Links to each image used to create this stack...
 
-### Deployment
+* [Grafana](https://hub.docker.com/r/grafana/grafana)
 
-Include any steps necessary to deploy the Docker compose file to Docker as well as any steps required for verification of the services
+* [InfluxDB](https://hub.docker.com/_/influxdb)
 
-### Initialization
-
-Include any steps necessary to initialize the services - account creation? intro wizards? influxdb connections?
+* [Chronograf](https://hub.docker.com/_/chronograf)
