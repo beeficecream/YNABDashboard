@@ -19,7 +19,7 @@
     "links": [],
     "panels": [
       {
-        "datasource": "wac-influxdb_ynab",
+        "datasource": "ynab_datasource",
         "description": "",
         "fieldConfig": {
           "defaults": {
@@ -199,7 +199,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "wac-influxdb_ynab",
+        "datasource": "ynab_datasource",
         "decimals": 2,
         "description": "",
         "fieldConfig": {
@@ -420,7 +420,7 @@
         }
       },
       {
-        "datasource": "wac-influxdb_ynab",
+        "datasource": "ynab_datasource",
         "description": "",
         "fieldConfig": {
           "defaults": {
@@ -570,7 +570,7 @@
           "label": "Others",
           "threshold": 0
         },
-        "datasource": "wac-influxdb_ynab",
+        "datasource": "ynab_datasource",
         "decimals": 2,
         "description": "",
         "fieldConfig": {
@@ -688,7 +688,7 @@
         "valueName": "total"
       },
       {
-        "datasource": "wac-influxdb_ynab",
+        "datasource": "ynab_datasource",
         "description": "",
         "fieldConfig": {
           "defaults": {
@@ -873,7 +873,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "wac-influxdb_ynab",
+        "datasource": "ynab_datasource",
         "decimals": null,
         "description": "",
         "fieldConfig": {
