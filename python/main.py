@@ -23,7 +23,7 @@ logger = logging.getLogger()
 
 # Import and set all needed configurations
 with open(os.path.join(sys.path[0],config)) as json_file:
-    config_data = json.load(json_file)
+    config_data = json.load(file)
 idb_host = config_data["InfluxDBHost"]
 idb_port = config_data["InfluxDBPort"]
 idb_index = config_data["InfluxDBIndex"]
