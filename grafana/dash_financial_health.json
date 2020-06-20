@@ -1,1184 +1,1186 @@
 {
-    "annotations": {
-      "list": [
-        {
-          "builtIn": 1,
-          "datasource": "-- Grafana --",
-          "enable": true,
-          "hide": true,
-          "iconColor": "rgba(0, 211, 255, 1)",
-          "name": "Annotations & Alerts",
-          "type": "dashboard"
-        }
-      ]
-    },
-    "editable": true,
-    "gnetId": null,
-    "graphTooltip": 0,
-    "id": 23,
-    "links": [],
-    "panels": [
+  "annotations": {
+    "list": [
       {
-        "datasource": "ynab_datasource",
-        "description": "",
-        "fieldConfig": {
-          "defaults": {
-            "custom": {},
-            "decimals": 0,
-            "mappings": [],
-            "max": 100,
-            "min": 0,
-            "thresholds": {
-              "mode": "percentage",
-              "steps": [
-                {
-                  "color": "red",
-                  "value": null
-                },
-                {
-                  "color": "dark-orange",
-                  "value": 25
-                },
-                {
-                  "color": "yellow",
-                  "value": 50
-                },
-                {
-                  "color": "dark-green",
-                  "value": 85
-                }
-              ]
-            },
-            "unit": "percent"
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "panels": [
+    {
+      "datasource": "ynab_datasource",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "decimals": 0,
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "dark-orange",
+                "value": 25
+              },
+              {
+                "color": "yellow",
+                "value": 50
+              },
+              {
+                "color": "dark-green",
+                "value": 85
+              }
+            ]
           },
-          "overrides": []
+          "unit": "percent"
         },
-        "gridPos": {
-          "h": 6,
-          "w": 7,
-          "x": 0,
-          "y": 0
-        },
-        "id": 6,
-        "options": {
-          "displayMode": "lcd",
-          "orientation": "horizontal",
-          "reduceOptions": {
-            "calcs": [
-              "last"
-            ],
-            "values": false
-          },
-          "showUnfilled": true
-        },
-        "pluginVersion": "7.0.0",
-        "targets": [
-          {
-            "groupBy": [],
-            "measurement": "categories",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT \"goalPercentageComplete\" AS \"Savings Category A\" FROM \"categories\" WHERE (\"category\" = 'Savings Category A')",
-            "rawQuery": true,
-            "refId": "A",
-            "resultFormat": "table",
-            "select": [
-              [
-                {
-                  "params": [
-                    "goalPercentageComplete"
-                  ],
-                  "type": "field"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "category",
-                "operator": "=",
-                "value": "Savings Category A"
-              }
-            ]
-          },
-          {
-            "groupBy": [],
-            "measurement": "categories",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT \"goalPercentageComplete\" AS \"Savings Category B\" FROM \"categories\" WHERE (\"category\" = 'Savings Category B')",
-            "rawQuery": true,
-            "refId": "C",
-            "resultFormat": "table",
-            "select": [
-              [
-                {
-                  "params": [
-                    "goal_percentage"
-                  ],
-                  "type": "field"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "category",
-                "operator": "=",
-                "value": "Savings Category B"
-              }
-            ]
-          },
-          {
-            "groupBy": [],
-            "hide": false,
-            "measurement": "categories",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT \"goalPercentageComplete\" AS \"Savings Category C\" FROM \"categories\" WHERE (\"category\" = 'Savings Category C')",
-            "rawQuery": true,
-            "refId": "D",
-            "resultFormat": "table",
-            "select": [
-              [
-                {
-                  "params": [
-                    "goal_percentage"
-                  ],
-                  "type": "field"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "category",
-                "operator": "=",
-                "value": "Savings Category C"
-              }
-            ]
-          },
-          {
-            "groupBy": [],
-            "measurement": "categories",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT \"goalPercentageComplete\" AS \"Savings Category D\" FROM \"categories\" WHERE (\"category\" = 'Savings Category D')",
-            "rawQuery": true,
-            "refId": "B",
-            "resultFormat": "table",
-            "select": [
-              [
-                {
-                  "params": [
-                    "goal_percentage"
-                  ],
-                  "type": "field"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "category",
-                "operator": "=",
-                "value": "Savings Category D"
-              }
-            ]
-          }
-        ],
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Savings Objectives",
-        "transformations": [],
-        "transparent": true,
-        "type": "bargauge"
+        "overrides": []
       },
-      {
-        "aliasColors": {
-          "Expense": "red",
-          "Expenses": "semi-dark-red",
-          "Income": "semi-dark-green"
-        },
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "ynab_datasource",
-        "decimals": 2,
-        "description": "",
-        "fieldConfig": {
-          "defaults": {
-            "custom": {
-              "align": "center",
-              "displayMode": "auto"
-            },
-            "decimals": 2,
-            "mappings": [
-              {
-                "from": "",
-                "id": 0,
-                "operator": "",
-                "text": "",
-                "to": "",
-                "type": 1
-              }
-            ],
-            "noValue": "0",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "currencyUSD"
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 3,
-        "gridPos": {
-          "h": 6,
-          "w": 10,
-          "x": 7,
-          "y": 0
-        },
-        "hiddenSeries": false,
-        "id": 2,
-        "legend": {
-          "alignAsTable": false,
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "rightSide": false,
-          "show": true,
-          "total": false,
+      "gridPos": {
+        "h": 6,
+        "w": 7,
+        "x": 0,
+        "y": 0
+      },
+      "id": 6,
+      "options": {
+        "displayMode": "lcd",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
           "values": false
         },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "dataLinks": []
-        },
-        "percentage": false,
-        "pluginVersion": "7.0.0",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [
-          {
-            "alias": "Expenses",
-            "yaxis": 1
-          }
-        ],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": true,
-        "targets": [
-          {
-            "groupBy": [
-              {
-                "params": [
-                  "1d"
-                ],
-                "type": "time"
-              }
-            ],
-            "hide": false,
-            "measurement": "transactions",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT sum(\"amount\") AS \"Expense\" FROM \"transactions\" WHERE $timeFilter AND (\"payee\" !~ /Transfer*/ AND \"payee\" !~ /Payment*/ AND \"payee\" !~ /Starting*/) AND \"amount\" < 0 GROUP BY time(1d)",
-            "rawQuery": true,
-            "refId": "A",
-            "resultFormat": "table",
-            "select": [
-              [
-                {
-                  "params": [
-                    "amount"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "payee",
-                "operator": "!=",
-                "value": "Transfer"
-              }
-            ]
-          },
-          {
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT sum(\"amount\")/2 AS \"Income\" FROM \"transactions\" WHERE $timeFilter AND (\"category\" = 'To be Budgeted') AND \"amount\" > 0 GROUP BY time(1d)",
-            "rawQuery": true,
-            "refId": "C",
-            "resultFormat": "table",
-            "select": [
-              [
-                {
-                  "params": [
-                    "value"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "category",
-                "operator": "=",
-                "value": "To be Budgeted"
-              }
-            ]
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Cash Flow By Day",
-        "tooltip": {
-          "shared": true,
-          "sort": 2,
-          "value_type": "individual"
-        },
-        "transformations": [
-          {
-            "id": "organize",
-            "options": {
-              "excludeByName": {},
-              "indexByName": {},
-              "renameByName": {
-                "budget": "Budget",
-                "top": "Expense"
-              }
-            }
-          }
-        ],
-        "transparent": true,
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "decimals": null,
-            "format": "currencyUSD",
-            "label": "",
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "decimals": 2,
-            "format": "short",
-            "label": "",
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": false
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
+        "showUnfilled": true
       },
-      {
-        "datasource": "ynab_datasource",
-        "description": "",
-        "fieldConfig": {
-          "defaults": {
-            "custom": {
-              "align": null,
-              "displayMode": "color-text"
-            },
-            "decimals": 2,
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "red",
-                  "value": null
-                },
-                {
-                  "color": "yellow",
-                  "value": -200
-                },
-                {
-                  "color": "green",
-                  "value": 0
-                }
-              ]
-            },
-            "unit": "currencyUSD"
-          },
-          "overrides": [
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "groupBy": [],
+          "measurement": "categories",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT \"goalPercentageComplete\" AS \"Savings Category A\" FROM \"categories\" WHERE 
+(\"category\" = 'Savings Category A')",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "goalPercentageComplete"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
             {
-              "matcher": {
-                "id": "byName",
-                "options": "Amount"
-              },
-              "properties": [
-                {
-                  "id": "custom.align",
-                  "value": "center"
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "Amount"
-              },
-              "properties": [
-                {
-                  "id": "mappings",
-                  "value": [
-                    {
-                      "from": "",
-                      "id": 0,
-                      "operator": "",
-                      "text": "",
-                      "to": "",
-                      "type": 1,
-                      "value": ""
-                    }
-                  ]
-                }
-              ]
+              "key": "category",
+              "operator": "=",
+              "value": "Savings Category A"
             }
           ]
         },
-        "gridPos": {
-          "h": 12,
-          "w": 6,
-          "x": 17,
-          "y": 0
-        },
-        "id": 12,
-        "options": {
-          "frameIndex": 1,
-          "showHeader": true
-        },
-        "pluginVersion": "7.0.0",
-        "targets": [
-          {
-            "groupBy": [
+        {
+          "groupBy": [],
+          "measurement": "categories",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT \"goalPercentageComplete\" AS \"Savings Category B\" FROM \"categories\" WHERE 
+(\"category\" = 'Savings Category B')",
+          "rawQuery": true,
+          "refId": "C",
+          "resultFormat": "table",
+          "select": [
+            [
               {
                 "params": [
-                  "$__interval"
+                  "goal_percentage"
                 ],
-                "type": "time"
-              },
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "category",
+              "operator": "=",
+              "value": "Savings Category B"
+            }
+          ]
+        },
+        {
+          "groupBy": [],
+          "hide": false,
+          "measurement": "categories",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT \"goalPercentageComplete\" AS \"Savings Category C\" FROM \"categories\" WHERE 
+(\"category\" = 'Savings Category C')",
+          "rawQuery": true,
+          "refId": "D",
+          "resultFormat": "table",
+          "select": [
+            [
               {
                 "params": [
-                  "null"
+                  "goal_percentage"
                 ],
-                "type": "fill"
+                "type": "field"
               }
-            ],
-            "hide": false,
-            "measurement": "transactions",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT \"payee\" as \"Payee\",bottom(\"amount\",10) AS \"Amount\" FROM (SELECT \"amount\",\"payee\" FROM \"transactions\" WHERE $timeFilter AND \"amount\" < 0 AND (\"payee\" !~ /Transfer*/ AND \"payee\" !~ /Starting*/))",
-            "rawQuery": true,
-            "refId": "B",
-            "resultFormat": "table",
-            "select": [
-              [
-                {
-                  "params": [
-                    "amount"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [
-                    3
-                  ],
-                  "type": "top"
-                }
-              ]
-            ],
-            "tags": []
-          }
-        ],
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Top 10 Expenses",
-        "transformations": [
-          {
-            "id": "organize",
-            "options": {
-              "excludeByName": {
-                "Time": true,
-                "id": true
+            ]
+          ],
+          "tags": [
+            {
+              "key": "category",
+              "operator": "=",
+              "value": "Savings Category C"
+            }
+          ]
+        },
+        {
+          "groupBy": [],
+          "measurement": "categories",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT \"goalPercentageComplete\" AS \"Savings Category D\" FROM \"categories\" WHERE 
+(\"category\" = 'Savings Category D')",
+          "rawQuery": true,
+          "refId": "B",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "goal_percentage"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "category",
+              "operator": "=",
+              "value": "Savings Category D"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Savings Objectives",
+      "transformations": [],
+      "transparent": true,
+      "type": "bargauge"
+    },
+    {
+      "aliasColors": {
+        "Expense": "red",
+        "Expenses": "semi-dark-red",
+        "Income": "semi-dark-green"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "ynab_datasource",
+      "decimals": 2,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "center",
+            "displayMode": "auto"
+          },
+          "decimals": 2,
+          "mappings": [
+            {
+              "from": "",
+              "id": 0,
+              "operator": "",
+              "text": "",
+              "to": "",
+              "type": 1
+            }
+          ],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
               },
-              "indexByName": {},
-              "renameByName": {
-                "Time": ""
+              {
+                "color": "red",
+                "value": 80
               }
+            ]
+          },
+          "unit": "currencyUSD"
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 3,
+      "gridPos": {
+        "h": 6,
+        "w": 10,
+        "x": 7,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 2,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pluginVersion": "7.0.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "Expenses",
+          "yaxis": 1
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "1d"
+              ],
+              "type": "time"
+            }
+          ],
+          "hide": false,
+          "measurement": "transactions",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT sum(\"amount\") AS \"Expense\" FROM \"transactions\" WHERE $timeFilter AND (\"payee\" 
+!~ /Transfer*/ AND \"payee\" !~ /Payment*/ AND \"payee\" !~ /Starting*/) AND \"amount\" < 0 GROUP BY time(1d)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "amount"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "payee",
+              "operator": "!=",
+              "value": "Transfer"
+            }
+          ]
+        },
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT sum(\"amount\")/2 AS \"Income\" FROM \"transactions\" WHERE $timeFilter AND 
+(\"category\" = 'To be Budgeted') AND \"amount\" > 0 GROUP BY time(1d)",
+          "rawQuery": true,
+          "refId": "C",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "category",
+              "operator": "=",
+              "value": "To be Budgeted"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Cash Flow By Day",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "budget": "Budget",
+              "top": "Expense"
             }
           }
-        ],
-        "transparent": true,
-        "type": "table"
+        }
+      ],
+      "transparent": true,
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
       },
-      {
-        "aliasColors": {},
-        "breakPoint": "50%",
-        "cacheTimeout": null,
-        "combine": {
-          "label": "Others",
-          "threshold": 0
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "currencyUSD",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
         },
-        "datasource": "ynab_datasource",
-        "decimals": 2,
-        "description": "",
-        "fieldConfig": {
-          "defaults": {
-            "custom": {}
+        {
+          "decimals": 2,
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "datasource": "ynab_datasource",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null,
+            "displayMode": "color-text"
           },
-          "overrides": []
+          "decimals": 2,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": -200
+              },
+              {
+                "color": "green",
+                "value": 0
+              }
+            ]
+          },
+          "unit": "currencyUSD"
         },
-        "fontSize": "80%",
-        "format": "currencyUSD",
-        "gridPos": {
-          "h": 12,
-          "w": 4,
-          "x": 0,
-          "y": 6
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Amount"
+            },
+            "properties": [
+              {
+                "id": "custom.align",
+                "value": "center"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Amount"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "from": "",
+                    "id": 0,
+                    "operator": "",
+                    "text": "",
+                    "to": "",
+                    "type": 1,
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 6,
+        "x": 17,
+        "y": 0
+      },
+      "id": 12,
+      "options": {
+        "frameIndex": 1,
+        "showHeader": true
+      },
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "transactions",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT \"payee\" as \"Payee\",bottom(\"amount\",10) AS \"Amount\" FROM (SELECT 
+\"amount\",\"payee\" FROM \"transactions\" WHERE $timeFilter AND \"amount\" < 0 AND (\"payee\" !~ /Transfer*/ 
+AND \"payee\" !~ /Starting*/))",
+          "rawQuery": true,
+          "refId": "B",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "amount"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [
+                  3
+                ],
+                "type": "top"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Top 10 Expenses",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "id": true
+            },
+            "indexByName": {},
+            "renameByName": {
+              "Time": ""
+            }
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "table"
+    },
+    {
+      "aliasColors": {},
+      "breakPoint": "50%",
+      "cacheTimeout": null,
+      "combine": {
+        "label": "Others",
+        "threshold": 0
+      },
+      "datasource": "ynab_datasource",
+      "decimals": 2,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
         },
-        "id": 20,
-        "interval": null,
-        "legend": {
-          "header": "",
-          "percentage": false,
-          "percentageDecimals": 2,
-          "show": true,
-          "sort": "total",
-          "sortDesc": true,
+        "overrides": []
+      },
+      "fontSize": "80%",
+      "format": "currencyUSD",
+      "gridPos": {
+        "h": 12,
+        "w": 4,
+        "x": 0,
+        "y": 6
+      },
+      "id": 20,
+      "interval": null,
+      "legend": {
+        "header": "",
+        "percentage": false,
+        "percentageDecimals": 2,
+        "show": true,
+        "sort": "total",
+        "sortDesc": true,
+        "values": true
+      },
+      "legendType": "Under graph",
+      "links": [],
+      "maxDataPoints": 1,
+      "nullPointMode": "connected",
+      "pieType": "donut",
+      "strokeWidth": "1",
+      "targets": [
+        {
+          "alias": "Income Source B",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            }
+          ],
+          "measurement": "transactions",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "amount"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "payee",
+              "operator": "=",
+              "value": "Income Source B"
+            }
+          ]
+        },
+        {
+          "alias": "Income Source A",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            }
+          ],
+          "measurement": "transactions",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "amount"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "payee",
+              "operator": "=",
+              "value": "Income Source A"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Income",
+      "transparent": true,
+      "type": "grafana-piechart-panel",
+      "valueName": "total"
+    },
+    {
+      "datasource": "ynab_datasource",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "decimals": 2,
+          "mappings": [],
+          "max": 6000,
+          "min": -6000,
+          "noValue": "0",
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 50
+              },
+              {
+                "color": "dark-green",
+                "value": 62
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 4,
+        "y": 6
+      },
+      "id": 16,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
           "values": true
         },
-        "legendType": "Under graph",
-        "links": [],
-        "maxDataPoints": 1,
-        "nullPointMode": "connected",
-        "pieType": "donut",
-        "strokeWidth": "1",
-        "targets": [
-          {
-            "alias": "Income Source B",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              }
-            ],
-            "measurement": "transactions",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "amount"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "sum"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "payee",
-                "operator": "=",
-                "value": "Income Source B"
-              }
-            ]
-          },
-          {
-            "alias": "Income Source A",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              }
-            ],
-            "measurement": "transactions",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "B",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "amount"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "sum"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "payee",
-                "operator": "=",
-                "value": "Income Source A"
-              }
-            ]
-          }
-        ],
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Income",
-        "transparent": true,
-        "type": "grafana-piechart-panel",
-        "valueName": "total"
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
       },
-      {
-        "datasource": "ynab_datasource",
-        "description": "",
-        "fieldConfig": {
-          "defaults": {
-            "custom": {},
-            "decimals": 2,
-            "mappings": [],
-            "max": 6000,
-            "min": -6000,
-            "noValue": "0",
-            "thresholds": {
-              "mode": "percentage",
-              "steps": [
-                {
-                  "color": "red",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 50
-                },
-                {
-                  "color": "dark-green",
-                  "value": 62
-                }
-              ]
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "alias": "Expenses",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
             },
-            "unit": "none"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 6,
-          "w": 3,
-          "x": 4,
-          "y": 6
-        },
-        "id": 16,
-        "options": {
-          "orientation": "auto",
-          "reduceOptions": {
-            "calcs": [
-              "last"
-            ],
-            "values": true
-          },
-          "showThresholdLabels": false,
-          "showThresholdMarkers": true
-        },
-        "pluginVersion": "7.0.0",
-        "targets": [
-          {
-            "alias": "Expenses",
-            "groupBy": [
-              {
-                "params": [
-                  "$interval"
-                ],
-                "type": "time"
-              }
-            ],
-            "hide": false,
-            "measurement": "categories",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT sum(\"activity\") FROM (SELECT last(\"activity\") as \"activity\" FROM \"categories\" WHERE $timeFilter AND (\"categoryGroup\" != 'Credit Card Payments' AND \"deleted\" = 'False' AND \"hidden\" = 'False') AND activity < 0 GROUP BY \"category\")",
-            "rawQuery": true,
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "activity"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "sum"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "categoryGroup",
-                "operator": "!=",
-                "value": "Credit Card Payments"
-              },
-              {
-                "condition": "AND",
-                "key": "deleted",
-                "operator": "=",
-                "value": "False"
-              },
-              {
-                "condition": "AND",
-                "key": "hidden",
-                "operator": "=",
-                "value": "False"
-              }
-            ]
-          },
-          {
-            "alias": "Income",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "hide": false,
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT sum(\"activity\") FROM (SELECT last(\"activity\") as \"activity\" FROM \"categories\" WHERE $timeFilter AND (\"categoryGroup\" != 'Credit Card Payments' AND \"deleted\" = 'False' AND \"hidden\" = 'False') AND activity > 0 GROUP BY \"category\")",
-            "rawQuery": true,
-            "refId": "B",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "value"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": []
-          }
-        ],
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Net Gain/Loss",
-        "transformations": [
-          {
-            "id": "calculateField",
-            "options": {
-              "alias": "Net Gain/Loss",
-              "binary": {
-                "left": "Income",
-                "operator": "+",
-                "reducer": "sum",
-                "right": "Expenses"
-              },
-              "mode": "binary",
-              "reduce": {
-                "reducer": "sum"
-              },
-              "replaceFields": false
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
             }
-          },
-          {
-            "id": "organize",
-            "options": {
-              "excludeByName": {
-                "Expenses": true,
-                "Income": true,
-                "Time": true
+          ],
+          "measurement": "on_budget_transactions",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT sum(\"amount\") AS \"Expenses\" FROM \"on_budget_transactions\" WHERE $timeFilter AND 
+\"amount\" < 0 ",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "amount"
+                ],
+                "type": "field"
               },
-              "indexByName": {},
-              "renameByName": {}
+              {
+                "params": [
+                  " / 100"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "Income",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
             }
-          }
-        ],
-        "transparent": true,
-        "type": "gauge"
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "ynab_datasource",
-        "decimals": null,
-        "description": "",
-        "fieldConfig": {
-          "defaults": {
-            "custom": {}
-          },
-          "overrides": []
-        },
-        "fill": 0,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 6,
-          "w": 10,
-          "x": 7,
-          "y": 6
-        },
-        "hiddenSeries": false,
-        "id": 10,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "rightSide": true,
-          "show": false,
-          "sideWidth": null,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "dataLinks": []
-        },
-        "percentage": false,
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "alias": "$tag_account",
-            "groupBy": [
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT sum(\"amount\") AS \"Income\" FROM \"on_budget_transactions\" WHERE $timeFilter AND 
+\"amount\" > 0 ",
+          "rawQuery": true,
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
               {
                 "params": [
-                  "$__interval"
+                  "value"
                 ],
-                "type": "time"
+                "type": "field"
               },
               {
-                "params": [
-                  "account"
-                ],
-                "type": "tag"
-              }
-            ],
-            "measurement": "accounts",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT last(\"balance\") FROM \"accounts\" WHERE (\"type\" = 'otherAsset') OR (\"on_budget\" = 'True' AND \"type\" != 'creditCard') AND $timeFilter GROUP BY time($__interval), \"account\"",
-            "rawQuery": true,
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "balance"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "last"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "on_budget",
-                "operator": "=",
-                "value": "True"
-              },
-              {
-                "condition": "AND",
-                "key": "type",
-                "operator": "!=",
-                "value": "creditCard"
+                "params": [],
+                "type": "mean"
               }
             ]
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Account Balances",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "transparent": true,
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "decimals": null,
-            "format": "currencyUSD",
-            "label": "",
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": false
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
+          ],
+          "tags": []
         }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "On Budget Net Gain/Loss",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "Net Gain/Loss",
+            "binary": {
+              "left": "Income",
+              "operator": "+",
+              "reducer": "sum",
+              "right": "Expenses"
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": false
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Expenses": true,
+              "Income": true,
+              "Time": true
+            },
+            "indexByName": {},
+            "renameByName": {}
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "gauge"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "ynab_datasource",
+      "decimals": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
       },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "ynab_datasource",
-        "decimals": null,
-        "description": "",
-        "fieldConfig": {
-          "defaults": {
-            "custom": {}
-          },
-          "overrides": []
-        },
-        "fill": 0,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 6,
-          "w": 10,
-          "x": 7,
-          "y": 12
-        },
-        "hiddenSeries": false,
-        "id": 14,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "rightSide": true,
-          "show": false,
-          "sideWidth": null,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "dataLinks": []
-        },
-        "percentage": false,
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "alias": "$tag_account",
-            "groupBy": [
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 10,
+        "x": 7,
+        "y": 6
+      },
+      "hiddenSeries": false,
+      "id": 10,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sideWidth": null,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_account",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "account"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "accounts",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"balance\") FROM \"accounts\" WHERE (\"type\" = 'otherAsset') OR (\"on_budget\" 
+= 'True' AND \"type\" != 'creditCard') AND $timeFilter GROUP BY time($__interval), \"account\"",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
               {
                 "params": [
-                  "$__interval"
+                  "balance"
                 ],
-                "type": "time"
+                "type": "field"
               },
               {
-                "params": [
-                  "account"
-                ],
-                "type": "tag"
-              }
-            ],
-            "measurement": "accounts",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT last(\"balance\") FROM \"accounts\" WHERE $timeFilter AND \"type\" != 'otherAsset' AND (\"type\" = 'creditCard' OR \"on_budget\" = 'False') GROUP BY time($__interval), \"account\"",
-            "rawQuery": true,
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "balance"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "last"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "on_budget",
-                "operator": "=",
-                "value": "False"
+                "params": [],
+                "type": "last"
               }
             ]
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Debt",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "transparent": true,
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "decimals": null,
-            "format": "currencyUSD",
-            "label": "",
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": false
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
+          ],
+          "tags": [
+            {
+              "key": "on_budget",
+              "operator": "=",
+              "value": "True"
+            },
+            {
+              "condition": "AND",
+              "key": "type",
+              "operator": "!=",
+              "value": "creditCard"
+            }
+          ]
         }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Account Balances",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transparent": true,
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "currencyUSD",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
       }
-    ],
-    "refresh": "1h",
-    "schemaVersion": 25,
-    "style": "dark",
-    "tags": [],
-    "templating": {
-      "list": []
     },
-    "time": {
-      "from": "now/M",
-      "to": "now/M"
-    },
-    "timepicker": {
-      "refresh_intervals": [
-        "10s",
-        "30s",
-        "1m",
-        "5m",
-        "15m",
-        "30m",
-        "1h",
-        "2h",
-        "1d"
-      ]
-    },
-    "timezone": "utc",
-    "title": "Financial Health",
-    "uid": "3pGj_VkMk",
-    "version": 5
-  }
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "ynab_datasource",
+      "decimals": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 10,
+        "x": 7,
+        "y": 12
+      },
+      "hiddenSeries": false,
+      "id": 14,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sideWidth": null,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_account",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "account"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "accounts",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"balance\") FROM \"accounts\" WHERE $timeFilter AND \"type\" != 'otherAsset' 
+AND (\"type\" = 'creditCard' OR \"on_budget\" = 'False') GROUP BY time($__interval), \"account\"",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "balance"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "on_budget",
+              "operator": "=",
+              "value": "False"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Debt",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transparent": true,
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "currencyUSD",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": "1h",
+  "schemaVersion": 25,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now/M",
+    "to": "now/M"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "utc",
+  "title": "Financial Health",
+  "uid": "3pGj_VkMk",
+  "version": 2
+}
