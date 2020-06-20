@@ -1,6 +1,6 @@
 ## Functions
 def convert_currency(self,currency):
-    output = round(currency/1000,2)
+    output = round(currency*0.001,2)
     return output
 
 def convert_date(self,date_str):
