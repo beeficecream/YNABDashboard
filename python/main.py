@@ -60,6 +60,7 @@ all_transactions = [t for t in budget.transactions]
 all_transactions_ids = [t.id for t in all_transactions]
 new_transactions = [t for t in all_transactions if not any(t.id in id for id in influx_transactions_ids)]
 bad_transactions = [i for i in influx_transactions_ids if not any(i in id for id in all_transactions_ids)]
+on_budget_accounts = [o.id for o in budget.accounts if o.on_budget]
 
 ## Create plot points
 points = []
@@ -127,6 +128,27 @@ for transaction in new_transactions:
         }
     }
     points.append(transaction_json)
+
+for transaction in new_transactions:
+    if transaction.account_id in on_budget_accounts:
+        on_budget_transaction_json = {
+            "measurement": "on_budget_transactions",
+            "time": transaction.date,
+            "tags": {
+                "account": transaction.account_name,
+                "budget": budget.name,
+                "category": transaction.category_name,
+                "categoryGroup": transaction.category_group_name,
+                "id": transaction.id,
+                "payee": transaction.payee_name,
+                "flagColor": transaction.flag_color
+                
+            },
+            "fields": {
+                "amount": transaction.amount
+            }
+        }
+    points.append(on_budget_transaction_json)
 
 ## Remove bad points
 for b in bad_transactions:
