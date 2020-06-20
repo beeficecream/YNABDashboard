@@ -132,7 +132,7 @@ dmypy.json
 config.json
 <<<<<<< HEAD
 stack_grafana_influxdb_chronograf_personal.yml
-.files/
+./docker/files/
 =======
 >>>>>>> parent of 45ca34d... Update gitignore. Correct json file name in main.py
 
