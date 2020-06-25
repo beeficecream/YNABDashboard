@@ -62,7 +62,17 @@ new_transactions = [t for t in all_transactions if not any(t.id in id for id in 
 bad_transactions = [i for i in influx_transactions_ids if not any(i in id for id in all_transactions_ids)]
 on_budget_accounts = [o.id for o in budget.accounts if o.on_budget]
 
-## Create plot points
+#Set Currency for Grafana
+currency = "currency"+budget.currency_format["iso_code"]
+with open('../storage/grafana/dashboards/financial.json', 'r') as file:
+    filedata = file.read()
+
+filedata = filedata.replace('currencyUSD', currency)
+
+with open('../storage/grafana/dashboards/financial.json', 'w') as file:
+    file.write(filedata)
+
+        ## Create plot points
 points = []
 for account in accounts:
     account_json = {
