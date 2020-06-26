@@ -234,7 +234,7 @@
               }
             ]
           },
-          "unit": "currencyUSD"
+          "unit": "currencyGBP"
         },
         "overrides": []
       },
@@ -398,7 +398,7 @@
       "yaxes": [
         {
           "decimals": null,
-          "format": "currencyUSD",
+          "format": "currencyGBP",
           "label": "",
           "logBase": 1,
           "max": null,
@@ -448,7 +448,7 @@
               }
             ]
           },
-          "unit": "currencyUSD"
+          "unit": "currencyGBP"
         },
         "overrides": [
           {
@@ -581,7 +581,7 @@
         "overrides": []
       },
       "fontSize": "80%",
-      "format": "currencyUSD",
+      "format": "currencyGBP",
       "gridPos": {
         "h": 12,
         "w": 4,
@@ -982,7 +982,7 @@
       "yaxes": [
         {
           "decimals": null,
-          "format": "currencyUSD",
+          "format": "currencyGBP",
           "label": "",
           "logBase": 1,
           "max": null,
@@ -1121,7 +1121,7 @@
       "yaxes": [
         {
           "decimals": null,
-          "format": "currencyUSD",
+          "format": "currencyGBP",
           "label": "",
           "logBase": 1,
           "max": null,

@@ -64,12 +64,16 @@ bad_transactions = [i for i in influx_transactions_ids if not any(i in id for id
 on_budget_accounts = [o.id for o in budget.accounts if o.on_budget]
 
 #Set Currency for Grafana
+dashboard_path = os.getcwd() + "/YNABDashboard/storage/grafana/dashboards/financial.json"
+
 currency = "currency"+budget.currency_format["iso_code"]
-with open('../storage/grafana/dashboards/financial.json', 'r') as file:
+
+with open(dashboard_path, 'r') as file:
     filedata = file.read()
 
 filedata = re.sub("currency...", currency, filedata)
-with open('../storage/grafana/dashboards/financial.json', 'w') as file:
+
+with open(dashboard_path, 'w') as file:
     file.write(filedata)
 
         ## Create plot points
