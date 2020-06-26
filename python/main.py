@@ -68,7 +68,6 @@ currency = "currency"+budget.currency_format["iso_code"]
 with open('../storage/grafana/dashboards/financial.json', 'r') as file:
     filedata = file.read()
 
-print(filedata)
 filedata = re.sub("currency...", currency, filedata)
 with open('../storage/grafana/dashboards/financial.json', 'w') as file:
     file.write(filedata)
