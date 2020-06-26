@@ -1,4 +1,4 @@
-# Libraries
+# Librariei
 import influxdb
 import json
 import logging
@@ -6,6 +6,7 @@ import os
 import requests
 import sys
 import time
+import re
 
 import ynab_client
 import ynab_resources
@@ -67,8 +68,8 @@ currency = "currency"+budget.currency_format["iso_code"]
 with open('../storage/grafana/dashboards/financial.json', 'r') as file:
     filedata = file.read()
 
-filedata = filedata.replace('currencyUSD', currency)
-
+print(filedata)
+filedata = re.sub("currency...", currency, filedata)
 with open('../storage/grafana/dashboards/financial.json', 'w') as file:
     file.write(filedata)
 
