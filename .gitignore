@@ -130,6 +130,10 @@ dmypy.json
 
 # User-specific configuration file
 config.json
+stack_grafana_influxdb_chronograf_personal.yml
+./storage/influxdb
+./storage/grafana/grafana.db
+./storage/chronograf
 
 # VSCode directories
 .vscode/
