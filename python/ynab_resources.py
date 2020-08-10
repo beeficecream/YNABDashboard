@@ -1,6 +1,9 @@
 ## Functions
 def convert_currency(self,currency):
-    output = round(currency/1000,2)
+    try:
+        output = round(currency/1000,2)
+    except:
+        output = 0.0 # needs to be dec, not int
     return output
 
 def convert_date(self,date_str):
