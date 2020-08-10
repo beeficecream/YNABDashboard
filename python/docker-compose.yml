@@ -1,0 +1,8 @@
+version: "2.4"
+services:
+  ynab_cron:
+    image: fergbrain/ynab-cron:latest
+    container_name: ynab_cron
+    restart: always
+    volumes:
+      - './config.json:/usr/src/app/config.json'
